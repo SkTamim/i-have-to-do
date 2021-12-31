@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: rgba(255, 220, 22, 0.815);
+	overflow: hidden;
+}
+
+ul {
+	list-style: none;
+}
+
+.main-heading {
+	text-align: center;
+	margin: 2rem 0;
+	text-transform: uppercase;
+
+	span {
+		display: block;
+	}
+
+	&--main {
+		font-size: 4rem;
+		transform: translateX(-50%);
+		animation: toLeft 1s ease-out forwards;
+	}
+	&--sub {
+		font-size: 1.5rem;
+		transform: translateX(50%);
+		animation: toLeft 1s ease-out forwards;
+	}
+}
+
+.list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+
+	&__item {
+		margin: 1rem 0;
+		animation: toLeft 1s ease-out forwards;
+		transform: translateX(200%);
+	}
+}
+
+@keyframes toRight {
+	to {
+		transform: translateX(0);
+	}
+}
+@keyframes toLeft {
+	to {
+		transform: translateX(0);
+	}
+}
+
+@for $i from 1 through 10 {
+	.list__item:nth-child(#{$i}) {
+		animation-delay: ($i * 0.1s) + 0.3s;
+	}
+}
